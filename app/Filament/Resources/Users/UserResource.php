@@ -14,7 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 
-use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager; //fizisysmaker:filament-auditing
+use App\Filament\RelationManagers\AuditsRelationManager;
 
 class UserResource extends Resource
 {
@@ -39,7 +39,7 @@ class UserResource extends Resource
         $relations = [];
             
     if (auth()->check() && auth()->user()->can('view_any_audit')) {
-        $relations[] = AuditsRelationManager::class; //fizisysmaker:filament-auditing
+        $relations[] = AuditsRelationManager::class; //fixzy-sysmaker:filament-auditing
     }
 	
 	return $relations;
